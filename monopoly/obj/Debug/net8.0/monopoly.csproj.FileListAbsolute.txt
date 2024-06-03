@@ -12,3 +12,4 @@ D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\refint\monopoly
 D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\monopoly.pdb
 D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\monopoly.genruntimeconfig.cache
 D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\ref\monopoly.dll
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\monopoly.sourcelink.json

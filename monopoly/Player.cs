@@ -1,5 +1,18 @@
-namespace Monopoly{
-        public class Player
+namespace Monopoly
+{
+    public interface IPlayer
+    {
+        string Name { get; set; }
+        decimal Money { get; set; }
+        int Position { get; set; }
+        List<Property> OwnedProperties { get; set; }
+        List<string> GetOwnedPropertyColors();
+        bool OwnsAllPropertiesOfColor(string color, List<PropertySpace> allProperties);
+        void BuildHouse(PropertySpace property);
+        void SellProperty(PropertySpace property);
+    }
+
+    public class Player : IPlayer
     {
         public string Name { get; set; }
         public decimal Money { get; set; }

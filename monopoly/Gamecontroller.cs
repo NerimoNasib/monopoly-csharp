@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Monopoly
 {
     public class GameController
@@ -5,14 +7,52 @@ namespace Monopoly
         private Board board;
         public List<Player> players;
         private Dice dice;
-        private const int BoardRows = 4;
-        private const int BoardCols = 10;
+        private const int boardX = 4;
+        private const int boardY = 10;
+        public int maxPlayer = 4;
+        public bool startGame = false;
 
         public GameController()
         {
             board = new Board();
             players = new List<Player>();
             dice = new Dice();
+        }
+
+        public void StartGame()
+        {
+
+            while (!startGame)
+            {
+                Console.WriteLine("\nEnter player name or type 'start' to begin the game:");
+
+                string input = Console.ReadLine();
+
+                if (input.ToLower() == "start")
+                {
+                    if (GetPlayers().Count < 2)
+                    {
+                        Console.WriteLine("\nPlease add at least 2 players to start the game.");
+                        continue;
+                    }
+
+                    startGame = true;
+                    Console.WriteLine("\nGame started!");
+                }
+                else
+                {
+                    if (GetPlayers().Count >= maxPlayer)
+                    {
+                        Console.WriteLine("\nCannot add more players. The maximum number of players has been reached.");
+                    }
+                    else
+                    {
+                        AddPlayer(input, 2000);
+                        Console.WriteLine($"\n{input} has joined the game with $2000.");
+                    }
+                }
+            }
+            PlayGame();
         }
 
         public List<Player> GetPlayers()
@@ -22,8 +62,15 @@ namespace Monopoly
 
         public void AddPlayer(string name, decimal initialMoney)
         {
-            Player player = new Player { Name = name, Money = initialMoney, Position = 0 };
-            players.Add(player);
+            if (players.Count < maxPlayer)
+            {
+                Player player = new Player { Name = name, Money = initialMoney, Position = 0 };
+                players.Add(player);
+            }
+            else
+            {
+                Console.WriteLine("Cannot add more players. The maximum number of players has been reached.");
+            }
         }
 
         public Space GetCurrentSpace(Player player)
@@ -100,7 +147,7 @@ namespace Monopoly
             card.Effect(player, this);
         }
 
-        public void OpenPlayerOwnedProperties(Player player)
+        public void OpenPlayerOwnedProperties(IPlayer player)
         {
             Console.WriteLine($"\n{player.Name}'s owned properties:");
 
@@ -118,7 +165,7 @@ namespace Monopoly
             }
         }
 
-        public bool IsBankrupt(Player player)
+        public bool IsBankrupt(IPlayer player)
         {
             return player.Money <= 0;
         }
@@ -141,12 +188,12 @@ namespace Monopoly
         public void DisplayMap()
         {
             Console.WriteLine("\n!!Current Location!!");
-            string[,] board = new string[BoardRows, BoardCols];
+            string[,] board = new string[boardX, boardY];
             int cellNumber = 1;
 
-            for (int i = 0; i < BoardRows; i++)
+            for (int i = 0; i < boardX; i++)
             {
-                for (int j = 0; j < BoardCols; j++)
+                for (int j = 0; j < boardY; j++)
                 {
                     board[i, j] = "[" + cellNumber.ToString("00") + "]";
                     cellNumber++;
@@ -155,15 +202,15 @@ namespace Monopoly
 
             foreach (var player in players)
             {
-                int x = player.Position % BoardCols;
-                int y = player.Position / BoardCols;
+                int x = player.Position % boardY;
+                int y = player.Position / boardY;
                 string playerName = player.Name.Length > 1 ? player.Name.Substring(0, 2) : player.Name.Substring(0, 1);
                 board[y, x] = $"[{playerName}]";
             }
 
-            for (int i = 0; i < BoardRows; i++)
+            for (int i = 0; i < boardX; i++)
             {
-                for (int j = 0; j < BoardCols; j++)
+                for (int j = 0; j < boardY; j++)
                 {
                     Console.Write($"{board[i, j]}");
                 }
