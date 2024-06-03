@@ -1,0 +1,14 @@
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\bin\Debug\net8.0\monopoly.exe
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\bin\Debug\net8.0\monopoly.deps.json
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\bin\Debug\net8.0\monopoly.runtimeconfig.json
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\bin\Debug\net8.0\monopoly.dll
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\bin\Debug\net8.0\monopoly.pdb
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\monopoly.GeneratedMSBuildEditorConfig.editorconfig
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\monopoly.AssemblyInfoInputs.cache
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\monopoly.AssemblyInfo.cs
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\monopoly.csproj.CoreCompileInputs.cache
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\monopoly.dll
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\refint\monopoly.dll
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\monopoly.pdb
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\monopoly.genruntimeconfig.cache
+D:\codingbodoh\c-sharp\monopoly-csharp\monopoly\obj\Debug\net8.0\ref\monopoly.dll
