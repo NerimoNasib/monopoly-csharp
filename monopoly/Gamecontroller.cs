@@ -73,13 +73,13 @@ namespace Monopoly
             }
         }
 
-        public Space GetCurrentSpace(IPlayer player)
+        public Space GetCurrentSpace(Player player)
         {
             int position = player.Position;
             return board.GetSpace(position);
         }
 
-        public void MovePlayer(IPlayer player, int steps)
+        public void MovePlayer(Player player, int steps)
         {
             player.Position = (player.Position + steps) % board.GetSpaceCount();
         }
@@ -124,8 +124,6 @@ namespace Monopoly
             Console.ResetColor();
         }
 
-
-
         public Card DrawCard(Space space)
         {
             if (space is ChanceSpace)
@@ -147,7 +145,7 @@ namespace Monopoly
             card.Effect(player, this);
         }
 
-        public void OpenPlayerOwnedProperties(IPlayer player)
+        public void OpenPlayerOwnedProperties(Player player)
         {
             Console.WriteLine($"\n{player.Name}'s owned properties:");
 
@@ -165,7 +163,7 @@ namespace Monopoly
             }
         }
 
-        public bool IsBankrupt(IPlayer player)
+        public bool IsBankrupt(Player player)
         {
             return player.Money <= 0;
         }
