@@ -73,13 +73,13 @@ namespace Monopoly
             }
         }
 
-        public Space GetCurrentSpace(Player player)
+        public Space GetCurrentSpace(IPlayer player)
         {
             int position = player.Position;
             return board.GetSpace(position);
         }
 
-        public void MovePlayer(Player player, int steps)
+        public void MovePlayer(IPlayer player, int steps)
         {
             player.Position = (player.Position + steps) % board.GetSpaceCount();
         }
